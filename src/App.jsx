@@ -8,33 +8,59 @@ function App() {
 
   const listArray = (arr) => {
     return (
-      <ul>
+      <ul className="list-unstyled">
         {arr.map((item) => (
-          <li key={item.id}>{item.title}</li>
+          <li key={item.id}>
+            <div className='d-flex align-items-center mb-2'>
+              <p className='my-1'><b>{item.title}</b> </p>
+              <span className={`state-label ${item.state} mx-3 px-3 py-1 rounded`}>{item.state}</span>
+            </div>
+
+            <p className='d-block'>ciao</p>
+
+          </li>
         ))}
       </ul>
     );
   };
 
-  const filterArray = (arr, state) => {
+  const filterStateArray = (arr, state) => {
+    const filteredTasks = arr.filter(item => item.state == state)
+    return filteredTasks;
+  };
+
+  const filterNotStateArray = (arr, state) => {
     const filteredTasks = arr.filter(item => item.state != state)
     return filteredTasks;
   };
 
-  const filteredTasks = filterArray(tasks, 'completed');
+  const completedTasks = filterStateArray(tasks, 'completed');
+  const notCompletedTasks = filterNotStateArray(tasks, 'completed');
 
 
   return (
     <>
-      <header className='header'>
-        <h1>My React project</h1>
+      <header className='header p-5'>
+        <div className='container'>
+          <h1>Task Manager</h1>
+        </div>
       </header>
 
-      <p>{tasks[0].state}</p>
+      <div className='container'>
+        <h3 className='h4 my-4'>Current Tasks ({notCompletedTasks.length})</h3>
+        <div className='mb-4'>
+          {listArray(notCompletedTasks)}
+        </div>
 
-      {listArray(tasks)}
+        <hr />
 
-      {listArray(filteredTasks)}
+        <h3 className='h4 my-4'>Completed Tasks ({completedTasks.length})</h3>
+        <div className='mb-4'>
+          {listArray(completedTasks)}
+        </div>
+        <hr />
+      </div>
+
     </>
   )
 }
