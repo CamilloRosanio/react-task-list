@@ -16,8 +16,8 @@ function App() {
               <span className={`state-label ${item.state} mx-3 px-3 py-1 rounded`}>{item.state}</span>
             </div>
 
-            <p className='m-0'>Priority: {item.priority}</p>
-            <p className='m-0'>Estimated time: {item.estimatedTime}</p>
+            <p className='detail m-0'>Priority: {item.priority}</p>
+            <p className='detail m-0'>Estimated time: {item.estimatedTime}</p>
           </li>
         ))}
       </ul>

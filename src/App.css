@@ -16,3 +16,8 @@
 .state-label.backlog {
     background-color: rgb(8, 0, 121);
 }
+
+.detail {
+    color: rgb(61, 61, 61);
+    font-size: .9rem;
+}
