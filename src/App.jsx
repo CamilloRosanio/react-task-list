@@ -10,14 +10,14 @@ function App() {
     return (
       <ul className="list-unstyled">
         {arr.map((item) => (
-          <li key={item.id}>
-            <div className='d-flex align-items-center mb-2'>
+          <li key={item.id} className='mb-3'>
+            <div className='d-flex align-items-center'>
               <p className='my-1'><b>{item.title}</b> </p>
               <span className={`state-label ${item.state} mx-3 px-3 py-1 rounded`}>{item.state}</span>
             </div>
 
-            <p className='d-block'>ciao</p>
-
+            <p className='m-0'>Priority: {item.priority}</p>
+            <p className='m-0'>Estimated time: {item.estimatedTime}</p>
           </li>
         ))}
       </ul>
