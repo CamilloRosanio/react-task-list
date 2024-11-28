@@ -24,16 +24,19 @@ function App() {
     );
   };
 
+  // CODICE SUPERFLUO - Si poteva dichiarare solo la variabile = array filtrato
   const filterStateArray = (arr, state) => {
     const filteredTasks = arr.filter(item => item.state == state)
     return filteredTasks;
   };
 
+  // CODICE SUPERFLUO - Si poteva dichiarare solo la variabile = array filtrato
   const filterNotStateArray = (arr, state) => {
     const filteredTasks = arr.filter(item => item.state != state)
     return filteredTasks;
   };
 
+  // VARIABILI CORRETTE - Si potevano dichiarare direttamente = array filtrato
   const completedTasks = filterStateArray(tasks, 'completed');
   const notCompletedTasks = filterNotStateArray(tasks, 'completed');
 
