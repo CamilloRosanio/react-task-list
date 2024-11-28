@@ -61,7 +61,6 @@ function App() {
         <div className='mb-4'>
           {listArray(completedTasks)}
         </div>
-        <hr />
       </div>
 
     </>
