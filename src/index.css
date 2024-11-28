@@ -1,0 +1,7 @@
+/* REGOLE DI RESET PER L'INTERO BODY */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
